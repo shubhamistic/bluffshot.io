@@ -1,0 +1,248 @@
+@use "sass:list";
+@use "../partials/variables";
+
+.game-screen {
+  // $card-size: variables.$card-size-xl-desktop;
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .player-north,
+  .player-south {
+    // height: list.nth($card-size, 1);
+    width: 100%;
+    display: flex;
+    // background-color: red;
+
+    // .left-container,
+    // .right-container {
+    //   $width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+    //   width: $width;
+    //   min-width: $width;
+    // }
+
+    .left-container {
+      display: flex;
+      align-items: center;
+
+      .exit-game-button {
+        height: 40%;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .p-exit-game-container {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .p-exit,
+          .p-game {
+            margin: 0;
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            text-shadow: 10px 2px 2px #262626;
+            color: #f3cd31;
+          }
+        }
+
+        &:hover {
+          img {
+            filter: brightness(0) invert(1);
+          }
+
+          .p-exit-game-container {
+
+            .p-exit,
+            .p-game {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .cards {
+      height: 100%;
+      flex: 1; // width
+      display: flex;
+      justify-content: center;
+      // background-color: yellow;
+      overflow: hidden;
+
+      .card:first-child {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  .table-row {
+    flex: 1; // height
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    .player-west,
+    .player-east {
+      height: 100%;
+      // width: list.nth($card-size, 1);
+
+      .cards {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // background-color: yellow;
+
+        .card:first-child {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    .table-center {
+      height: 100%;
+      flex: 1; // width
+      display: flex;
+      // background-color: green;
+    }
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  .game-screen {
+    $card-size: variables.$card-size-mobile;
+
+    .player-north,
+    .player-south {
+      height: list.nth($card-size, 1);
+
+      .left-container,
+      .right-container {
+        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      }
+    }
+
+    .table-row {
+
+      .player-west,
+      .player-east {
+        width: list.nth($card-size, 1);
+      }
+    }
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .game-screen {
+    $card-size: variables.$card-size-tablet;
+
+    .player-north,
+    .player-south {
+      height: list.nth($card-size, 1);
+
+      .left-container,
+      .right-container {
+        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      }
+    }
+
+    .table-row {
+
+      .player-west,
+      .player-east {
+        width: list.nth($card-size, 1);
+      }
+    }
+  }
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .game-screen {
+    $card-size: variables.$card-size-laptop;
+
+
+    .player-north,
+    .player-south {
+      height: list.nth($card-size, 1);
+
+      .left-container,
+      .right-container {
+        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      }
+    }
+
+    .table-row {
+
+      .player-west,
+      .player-east {
+        width: list.nth($card-size, 1);
+      }
+    }
+  }
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .game-screen {
+    $card-size: variables.$card-size-desktop;
+
+    .player-north,
+    .player-south {
+      height: list.nth($card-size, 1);
+
+      .left-container,
+      .right-container {
+        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      }
+    }
+
+    .table-row {
+
+      .player-west,
+      .player-east {
+        width: list.nth($card-size, 1);
+      }
+    }
+  }
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media only screen and (min-width: 1201px) {
+  .game-screen {
+    $card-size: variables.$card-size-xl-desktop;
+
+    .player-north,
+    .player-south {
+      height: list.nth($card-size, 1);
+
+      .left-container,
+      .right-container {
+        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      }
+    }
+
+    .table-row {
+
+      .player-west,
+      .player-east {
+        width: list.nth($card-size, 1);
+      }
+    }
+  }
+}

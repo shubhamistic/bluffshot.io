@@ -1,0 +1,141 @@
+.play-button {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .c1,
+  .c3 {
+    height: 10px;
+    width: calc(100% - 10px - 10px);
+    background-color: #EB5353;
+  }
+
+  .c2 {
+    flex: 1; // height
+    width: 100%;
+    display: flex;
+
+    .r1,
+    .r3 {
+      height: 100%;
+      width: 10px;
+      background-color: #EB5353;
+    }
+
+    .r2 {
+      box-sizing: border-box;
+      height: 100%;
+      flex: 1; // width
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 5px #F9D923;
+
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+        text-shadow: 10px 2px 2px #262626;
+        color: #fff;
+      }
+    }
+  }
+
+  &:hover {
+
+    .c1,
+    .c3 {
+      height: 10px;
+      width: calc(100% - 10px - 10px);
+      background-color: #fff;
+    }
+
+    .c2 {
+
+      .r1,
+      .r3 {
+        background-color: #fff;
+      }
+
+      .r2 {
+        border: solid 5px #fff;
+
+        p {
+          text-shadow: 5px 2px 2px #262626;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  .play-button {
+    height: 75px;
+    width: 225px;
+
+    .c1,
+    .c3 {
+      height: 7.5px;
+      width: calc(100% - 7.5px - 7.5px);
+    }
+
+    .c2 {
+
+      .r1,
+      .r3 {
+        width: 7.5px;
+      }
+
+      .r2 {
+        border: solid 4px #F9D923;
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .play-button {
+    height: 100px;
+    width: 250px;
+
+    .c2 .r2 p {
+      font-size: 25px;
+    }
+  }
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .play-button {
+    height: 100px;
+    width: 275px;
+
+    .c2 .r2 p {
+      font-size: 25px;
+    }
+  }
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .play-button {
+    height: 100px;
+    width: 275px;
+
+    .c2 .r2 p {
+      font-size: 25px;
+    }
+  }
+}

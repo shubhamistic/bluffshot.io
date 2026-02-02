@@ -1,0 +1,90 @@
+.game-title {
+  height: max-content;
+  width: max-content;
+  padding: 0 10px;
+  display: flex;
+
+  h1 {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    text-shadow: 10px 2px 2px #262626;
+  }
+
+  .b {
+    color: #4D96FF;
+  }
+
+  .l {
+    color: #F9D923;
+  }
+
+  .u {
+    color: #F26B0F;
+  }
+
+  .f1 {
+    color: #EB5353;
+  }
+
+  .f2 {
+    color: #EB5353;
+  }
+
+  .s {
+    color: #4D96FF;
+  }
+
+  .h {
+    color: #F9D923;
+  }
+
+  .o1 {
+    color: #F26B0F;
+  }
+
+  .t {
+    color: #EB5353;
+  }
+
+  .dot {
+    color: #4D96FF;
+  }
+
+  .i {
+    color: #F26B0F;
+  }
+
+  .o2 {
+    color: #F9D923;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  .game-title h1 {
+    font-size: 25px;
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .game-title h1 {
+    font-size: 35px;
+  }
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .game-title h1 {
+    font-size: 40px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .game-title h1 {
+    font-size: 45px;
+  }
+}

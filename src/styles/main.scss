@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  #root {
+    // min-height: 575px;
+    height: 100dvh;
+    min-width: 320px;
+    width: 100dvw;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 600px) {
+  body #root {
+    min-width: 320px;
+  }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  body #root {
+    min-width: 601px;
+  }
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body #root {
+    min-width: 769px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  body #root {
+    min-width: 1025px;
+  }
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media only screen and (min-width: 1201px) {
+  body #root {
+    min-width: 1201px;
+  }
+}
+
+button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer
+}
