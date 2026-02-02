@@ -19,11 +19,13 @@ export function useGameScreen(): GameScreen {
     pn: 0,
     pe: 0
   });
+  const [viewportAspectRatio, setViewportAspectRatio] = useState<GameScreen["viewportAspectRatio"]>(1);
 
   // refs ----------------------------------------------------------------------
   const northSouthCardsContainerRef = useRef<HTMLDivElement | null>(null);
   const eastWestCardsContainerRef = useRef<HTMLDivElement | null>(null)
 
+  // handlers ------------------------------------------------------------------
   const calculatePlayerCardOverlapOffset = (breakpoint: Breakpoint): GameScreen["playerCardOverlapOffset"] => {
     // northSouthCardsContainerDimensions
     const nsDims =
@@ -84,16 +86,20 @@ export function useGameScreen(): GameScreen {
     };
   }
 
+  // use effects --------------------------------------------------------------
   useEffect(() => {
-    // console.log("Viewport changed", width, height, breakpoint);
-
     setPlayerCardOverlapOffset(calculatePlayerCardOverlapOffset(breakpoint));
-  }, [width, height, breakpoint, game.hands]);
+  }, [width, height, breakpoint, game.hands, viewportAspectRatio]);
+
+  useEffect(() => {
+    setViewportAspectRatio(width / height);
+    console.log("Viewport aspect ratio:", width / height);
+  }, [width, height]);
 
   return {
     // states
-    playerCardOverlapOffset,
-    setPlayerCardOverlapOffset,
+    playerCardOverlapOffset, setPlayerCardOverlapOffset,
+    viewportAspectRatio, setViewportAspectRatio,
 
     // refs
     northSouthCardsContainerRef,

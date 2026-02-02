@@ -7,6 +7,9 @@ export interface GameScreen {
   playerCardOverlapOffset: PlayerCardOverlapOffset
   setPlayerCardOverlapOffset: Dispatch<SetStateAction<PlayerCardOverlapOffset>>
 
+  viewportAspectRatio: number
+  setViewportAspectRatio: Dispatch<SetStateAction<number>>
+
   northSouthCardsContainerRef: RefObject<HTMLDivElement | null>;
   eastWestCardsContainerRef: RefObject<HTMLDivElement | null>;
 }

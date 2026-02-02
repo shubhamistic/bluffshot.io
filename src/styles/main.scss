@@ -6,9 +6,12 @@
 
 body {
   margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 
   #root {
-    // min-height: 575px;
+    min-height: 575px;
     height: 100dvh;
     min-width: 320px;
     width: 100dvw;

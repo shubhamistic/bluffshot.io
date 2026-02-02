@@ -12,7 +12,7 @@ export default function GameScreen({ game }: { game: GameContextType }) {
     <div className="game-screen">
       {/* -------------------- Player North -------------------- */}
       <div className="player-north">
-        <div className="left-container">
+        <div className={`pn-left ${gameScreen.viewportAspectRatio < 1 ? "pn-minimize" : ""}`}>
           <button className="exit-game-button">
             <img
               src={ExitGameSvg}
@@ -30,19 +30,14 @@ export default function GameScreen({ game }: { game: GameContextType }) {
             <div
               className="card"
               key={card}
-              style={{
-                "marginLeft": gameScreen.playerCardOverlapOffset.pn
-              }}
+              style={{ "marginLeft": gameScreen.playerCardOverlapOffset.pn }}
             >
-              <PlayingCard
-                card={card}
-                isFaceDown
-              />
+              <PlayingCard card={card} playerId="pn" isFaceDown />
             </div>
           ))}
         </div>
 
-        <div className="right-container">
+        <div className={`pn-right ${gameScreen.viewportAspectRatio < 1 ? "pn-minimize" : ""}`}>
 
         </div>
       </div>
@@ -51,22 +46,24 @@ export default function GameScreen({ game }: { game: GameContextType }) {
       <div className="table-row">
         {/* -------------------- Player West -------------------- */}
         <div className="player-west">
+          <div className={`pw-top ${gameScreen.viewportAspectRatio < 1 ? "pw-maximize" : ""}`}>
+
+          </div>
+
           <div className="cards" ref={gameScreen.eastWestCardsContainerRef}>
             {game.hands?.pw.map(card => (
               <div
                 className="card"
                 key={card}
-                style={{
-                  "marginTop": gameScreen.playerCardOverlapOffset.pw
-                }}
+                style={{ "marginTop": gameScreen.playerCardOverlapOffset.pw }}
               >
-                <PlayingCard
-                  card={card}
-                  isFaceDown
-                  orientation="horizontal"
-                />
+                <PlayingCard card={card} playerId="pw" isFaceDown orientation="horizontal" />
               </div>
             ))}
+          </div>
+
+          <div className={`pw-bottom ${gameScreen.viewportAspectRatio < 1 ? "pw-maximize" : ""}`}>
+
           </div>
         </div>
         {/* ******************** Player West ******************** */}
@@ -79,22 +76,24 @@ export default function GameScreen({ game }: { game: GameContextType }) {
 
         {/* -------------------- Player East -------------------- */}
         <div className="player-east">
+          <div className={`pe-top ${gameScreen.viewportAspectRatio < 1 ? "pe-maximize" : ""}`}>
+
+          </div>
+
           <div className="cards">
             {game.hands?.pe.map(card => (
               <div
                 className="card"
                 key={card}
-                style={{
-                  "marginTop": gameScreen.playerCardOverlapOffset.pe
-                }}
+                style={{ "marginTop": gameScreen.playerCardOverlapOffset.pe }}
               >
-                <PlayingCard
-                  card={card}
-                  isFaceDown
-                  orientation="horizontal"
-                />
+                <PlayingCard card={card} playerId="pe" isFaceDown orientation="horizontal" />
               </div>
             ))}
+          </div>
+
+          <div className={`pe-bottom ${gameScreen.viewportAspectRatio < 1 ? "pe-maximize" : ""}`}>
+
           </div>
         </div>
         {/* ******************** Player East ******************** */}
@@ -102,7 +101,7 @@ export default function GameScreen({ game }: { game: GameContextType }) {
 
       {/* -------------------- Player South -------------------- */}
       <div className="player-south">
-        <div className="left-container">
+        <div className={`ps-left ${gameScreen.viewportAspectRatio < 1 ? "ps-minimize" : ""}`}>
 
         </div>
 
@@ -111,18 +110,14 @@ export default function GameScreen({ game }: { game: GameContextType }) {
             <div
               className="card"
               key={card}
-              style={{
-                "marginLeft": gameScreen.playerCardOverlapOffset.ps
-              }}
+              style={{ "marginLeft": gameScreen.playerCardOverlapOffset.ps }}
             >
-              <PlayingCard
-                card={card}
-              />
+              <PlayingCard card={card} playerId="ps" />
             </div>
           ))}
         </div>
 
-        <div className="right-container">
+        <div className={`ps-right ${gameScreen.viewportAspectRatio < 1 ? "ps-minimize" : ""}`}>
 
         </div>
       </div>

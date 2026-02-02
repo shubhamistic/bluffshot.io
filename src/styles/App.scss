@@ -2,10 +2,8 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
-	background-color: #e5e5f7;
-	opacity: 1;
-	background-image: radial-gradient(#303650 0.5px, #161925 0.5px);
-	background-size: 10px 10px;
+	background-color: #161925;
+	background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #161925 4px), repeating-linear-gradient(#30365055, #303650);
 
 	.main-menu-screen {
 		height: 100%;
@@ -29,4 +27,5 @@
 			align-items: center;
 		}
 	}
+
 }

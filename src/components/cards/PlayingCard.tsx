@@ -1,12 +1,21 @@
 import type { Rank, Suit, Card } from '@/types/Cards'
+import type { PlayerId } from '@/types/Player';
 import '@/styles/cards/PlayingCard.scss'
 
 interface PlayingCardProps {
-  card: Card
-  isFaceDown?: boolean,
-  orientation?: 'vertical' | 'horizontal',
-  onCardClick?: (card: Card) => void
+  card: Card;
+  playerId: PlayerId;
+  isFaceDown?: boolean;
+  orientation?: 'vertical' | 'horizontal';
+  onCardClick?: (card: Card) => void;
 }
+
+const playerBgClass: Record<PlayerId, "red-bg" | "blue-bg" | "green-bg" | "yellow-bg"> = {
+  ps: "yellow-bg",
+  pw: "green-bg",
+  pn: "red-bg",
+  pe: "blue-bg",
+};
 
 const suitSymbolMap: Record<Suit, string> = {
   Hearts: '♥',
@@ -35,6 +44,7 @@ const redSuits: Suit[] = ['Hearts', 'Diamonds']
 
 export const PlayingCard = ({
   card,
+  playerId,
   isFaceDown = false,
   orientation = 'vertical',
   onCardClick
@@ -43,9 +53,9 @@ export const PlayingCard = ({
   if (isFaceDown) {
     return (
       <div className={`playing-card playing-card-back ${orientation}`}>
-        <div className="playing-card-back-pattern" />
+        <div className={`playing-card-back-pattern ${playerBgClass[playerId]}`} />
       </div>
-    )
+    );
   }
 
   const [rank, suit] = card.split(' of ') as [Rank, Suit]
@@ -73,5 +83,5 @@ export const PlayingCard = ({
         <span>{suitSymbolMap[suit]}</span>
       </div>
     </button>
-  )
+  );
 }

@@ -15,16 +15,23 @@
     // height: list.nth($card-size, 1);
     width: 100%;
     display: flex;
-    // background-color: red;
 
-    // .left-container,
-    // .right-container {
-    //   $width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
-    //   width: $width;
-    //   min-width: $width;
+    .pn-left,
+    .pn-right,
+    .ps-left,
+    .ps-right {
+      // $width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      // width: $width;
+      // min-width: $width;
+      // background-color: blue;
+    }
+
+    // .pn-minimize,
+    // .ps-minimize {
+    //   width: list.nth($card-size, 1);
     // }
 
-    .left-container {
+    .pn-left {
       display: flex;
       align-items: center;
 
@@ -32,6 +39,7 @@
         height: 40%;
         display: flex;
         align-items: center;
+        // background-color: red;
 
         img {
           height: 100%;
@@ -77,8 +85,8 @@
       flex: 1; // width
       display: flex;
       justify-content: center;
-      // background-color: yellow;
       overflow: hidden;
+      // background-color: #f3cd31;
 
       .card:first-child {
         margin-left: 0 !important;
@@ -97,14 +105,29 @@
     .player-east {
       height: 100%;
       // width: list.nth($card-size, 1);
+      display: flex;
+      flex-direction: column;
+
+      .pw-top,
+      .pw-bottom,
+      .pe-top,
+      .pe-bottom {
+        height: 0;
+        // background-color: purple;
+      }
+
+      // .pw-maximize,
+      // .pe-maximize {
+      //   height: list.nth($card-size, 2);
+      // }
 
       .cards {
-        height: 100%;
+        flex: 1; // height
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        // background-color: yellow;
+        overflow: hidden;
 
         .card:first-child {
           margin-top: 0 !important;
@@ -125,14 +148,38 @@
 @media screen and (max-width: 600px) {
   .game-screen {
     $card-size: variables.$card-size-mobile;
+    $height: list.nth($card-size, 1);
+    $width: list.nth($card-size, 2);
 
     .player-north,
     .player-south {
-      height: list.nth($card-size, 1);
+      height: $height;
 
-      .left-container,
-      .right-container {
-        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      .pn-left,
+      .pn-right,
+      .ps-left,
+      .ps-right {
+        width: calc($height + $width);
+      }
+
+      .pn-left {
+        .exit-game-button {
+          height: 30%;
+
+          .p-exit-game-container {
+
+            .p-exit,
+            .p-game {
+              font-size: 12px;
+              text-shadow: 5px 1px 1px #262626;
+            }
+          }
+        }
+      }
+
+      .pn-minimize,
+      .ps-minimize {
+        width: $height;
       }
     }
 
@@ -140,7 +187,14 @@
 
       .player-west,
       .player-east {
-        width: list.nth($card-size, 1);
+        width: $height;
+
+        .pw-maximize,
+        .pe-maximize {
+          height: $width !important;
+          flex-basis: $width !important;
+          flex-shrink: 0 !important;
+        }
       }
     }
   }
@@ -150,14 +204,38 @@
 @media screen and (min-width: 601px) and (max-width: 768px) {
   .game-screen {
     $card-size: variables.$card-size-tablet;
+    $height: list.nth($card-size, 1);
+    $width: list.nth($card-size, 2);
 
     .player-north,
     .player-south {
-      height: list.nth($card-size, 1);
+      height: $height;
 
-      .left-container,
-      .right-container {
-        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      .pn-left,
+      .pn-right,
+      .ps-left,
+      .ps-right {
+        width: calc($height + $width);
+      }
+
+      .pn-left {
+        .exit-game-button {
+          height: 30%;
+
+          .p-exit-game-container {
+
+            .p-exit,
+            .p-game {
+              font-size: 12px;
+              text-shadow: 5px 1px 1px #262626;
+            }
+          }
+        }
+      }
+
+      .pn-minimize,
+      .ps-minimize {
+        width: $height;
       }
     }
 
@@ -165,7 +243,14 @@
 
       .player-west,
       .player-east {
-        width: list.nth($card-size, 1);
+        width: $height;
+
+        .pw-maximize,
+        .pe-maximize {
+          height: $width !important;
+          flex-basis: $width !important;
+          flex-shrink: 0 !important;
+        }
       }
     }
   }
@@ -175,15 +260,23 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .game-screen {
     $card-size: variables.$card-size-laptop;
-
+    $height: list.nth($card-size, 1);
+    $width: list.nth($card-size, 2);
 
     .player-north,
     .player-south {
-      height: list.nth($card-size, 1);
+      height: $height;
 
-      .left-container,
-      .right-container {
-        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      .pn-left,
+      .pn-right,
+      .ps-left,
+      .ps-right {
+        width: calc($height + $width);
+      }
+
+      .pn-minimize,
+      .ps-minimize {
+        width: $height;
       }
     }
 
@@ -191,7 +284,14 @@
 
       .player-west,
       .player-east {
-        width: list.nth($card-size, 1);
+        width: $height;
+
+        .pw-maximize,
+        .pe-maximize {
+          height: $width !important;
+          flex-basis: $width !important;
+          flex-shrink: 0 !important;
+        }
       }
     }
   }
@@ -201,14 +301,23 @@
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
   .game-screen {
     $card-size: variables.$card-size-desktop;
+    $height: list.nth($card-size, 1);
+    $width: list.nth($card-size, 2);
 
     .player-north,
     .player-south {
-      height: list.nth($card-size, 1);
+      height: $height;
 
-      .left-container,
-      .right-container {
-        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      .pn-left,
+      .pn-right,
+      .ps-left,
+      .ps-right {
+        width: calc($height + $width);
+      }
+
+      .pn-minimize,
+      .ps-minimize {
+        width: $height;
       }
     }
 
@@ -216,7 +325,14 @@
 
       .player-west,
       .player-east {
-        width: list.nth($card-size, 1);
+        width: $height;
+
+        .pw-maximize,
+        .pe-maximize {
+          height: $width !important;
+          flex-basis: $width !important;
+          flex-shrink: 0 !important;
+        }
       }
     }
   }
@@ -226,14 +342,23 @@
 @media only screen and (min-width: 1201px) {
   .game-screen {
     $card-size: variables.$card-size-xl-desktop;
+    $height: list.nth($card-size, 1);
+    $width: list.nth($card-size, 2);
 
     .player-north,
     .player-south {
-      height: list.nth($card-size, 1);
+      height: $height;
 
-      .left-container,
-      .right-container {
-        width: calc(list.nth($card-size, 1) + list.nth($card-size, 2));
+      .pn-left,
+      .pn-right,
+      .ps-left,
+      .ps-right {
+        width: calc($height + $width);
+      }
+
+      .pn-minimize,
+      .ps-minimize {
+        width: $height;
       }
     }
 
@@ -241,7 +366,14 @@
 
       .player-west,
       .player-east {
-        width: list.nth($card-size, 1);
+        width: $height;
+
+        .pw-maximize,
+        .pe-maximize {
+          height: $width !important;
+          flex-basis: $width !important;
+          flex-shrink: 0 !important;
+        }
       }
     }
   }

@@ -22,8 +22,11 @@
   position: relative;
   @include card-size(variables.$card-size-xl-desktop);
   border-radius: 8px;
+  background: linear-gradient(45deg, transparent 49%, #f2f2f2 49% 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #f2f2f2 49% 51%, transparent 51%);
+  background-size: 1em 1em;
   background-color: white;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 
   &.red {
     color: #c62828;
@@ -61,12 +64,27 @@
   &.playing-card-back {
     background: none;
 
+    .red-bg {
+      background: radial-gradient(circle at 50% 100%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%), radial-gradient(circle at 50% 0%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%);
+    }
+
+    .yellow-bg {
+      background: radial-gradient(circle at 50% 100%, #FF7F1180 5%, #FF7F11 5% 10%, #FF7F1180 10% 15%, #FF7F11 15% 20%, #FF7F1180 20% 25%, #FF7F11 25% 30%, #FF7F1180 30% 35%, #FF7F11 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, #FF7F1180 5%, #FF7F11 5% 10%, #FF7F1180 10% 15%, #FF7F11 15% 20%, #FF7F1180 20% 25%, #FF7F11 25% 30%, #FF7F1180 30% 35%, #FF7F11 35% 40%, transparent 40%), radial-gradient(circle at 50% 0%, #FF7F1180 5%, #FF7F11 5% 10%, #FF7F1180 10% 15%, #FF7F11 15% 20%, #FF7F1180 20% 25%, #FF7F11 25% 30%, #FF7F1180 30% 35%, #FF7F11 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, #FF7F1180 5%, #FF7F11 5% 10%, #FF7F1180 10% 15%, #FF7F11 15% 20%, #FF7F1180 20% 25%, #FF7F11 25% 30%, #FF7F1180 30% 35%, #FF7F11 35% 40%, transparent 40%);
+    }
+
+    .green-bg {
+      background: radial-gradient(circle at 50% 100%, #2a886180 5%, #2a8861 5% 10%, #2a886180 10% 15%, #2a8861 15% 20%, #2a886180 20% 25%, #2a8861 25% 30%, #2a886180 30% 35%, #2a8861 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, #2a886180 5%, #2a8861 5% 10%, #2a886180 10% 15%, #2a8861 15% 20%, #2a886180 20% 25%, #2a8861 25% 30%, #2a886180 30% 35%, #2a8861 35% 40%, transparent 40%), radial-gradient(circle at 50% 0%, #2a886180 5%, #2a8861 5% 10%, #2a886180 10% 15%, #2a8861 15% 20%, #2a886180 20% 25%, #2a8861 25% 30%, #2a886180 30% 35%, #2a8861 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, #2a886180 5%, #2a8861 5% 10%, #2a886180 10% 15%, #2a8861 15% 20%, #2a886180 20% 25%, #2a8861 25% 30%, #2a886180 30% 35%, #2a8861 35% 40%, transparent 40%);
+    }
+
+    .blue-bg {
+      background: radial-gradient(circle at 50% 100%, #18749880 5%, #187498 5% 10%, #18749880 10% 15%, #187498 15% 20%, #18749880 20% 25%, #187498 25% 30%, #18749880 30% 35%, #187498 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, #18749880 5%, #187498 5% 10%, #18749880 10% 15%, #187498 15% 20%, #18749880 20% 25%, #187498 25% 30%, #18749880 30% 35%, #187498 35% 40%, transparent 40%), radial-gradient(circle at 50% 0%, #18749880 5%, #187498 5% 10%, #18749880 10% 15%, #187498 15% 20%, #18749880 20% 25%, #187498 25% 30%, #18749880 30% 35%, #187498 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, #18749880 5%, #187498 5% 10%, #18749880 10% 15%, #187498 15% 20%, #18749880 20% 25%, #187498 25% 30%, #18749880 30% 35%, #187498 35% 40%, transparent 40%);
+    }
+
     .playing-card-back-pattern {
       width: 100%;
       height: 100%;
       border: solid 2px white;
       border-radius: 8px;
-      background: radial-gradient(circle at 50% 100%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%), radial-gradient(circle at 50% 0%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, #EB535380 5%, #EB5353 5% 10%, #EB535380 10% 15%, #EB5353 15% 20%, #EB535380 20% 25%, #EB5353 25% 30%, #EB535380 30% 35%, #EB5353 35% 40%, transparent 40%);
       background-size: 1em 1em;
       background-color: white;
       opacity: 1;
@@ -84,7 +102,7 @@
     }
 
     .playing-card-corner {
-      font-size: 10px;
+      font-size: 6px;
     }
   }
 }
@@ -99,7 +117,7 @@
     }
 
     .playing-card-corner {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 }
@@ -114,7 +132,7 @@
     }
 
     .playing-card-corner {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 }
@@ -129,7 +147,7 @@
     }
 
     .playing-card-corner {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 }
@@ -144,7 +162,7 @@
     }
 
     .playing-card-corner {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 }
