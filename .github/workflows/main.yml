@@ -1,0 +1,25 @@
+name: Deploy to Firebase Hosting on merge (MAIN)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Build the React application
+      - name: Build React App
+        run: (npm ci && npm run build)
+
+      # Deploy to Firebase Hosting
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLUFFSHOT_IO }}
+          channelId: live
+          projectId: bluffshot-io
